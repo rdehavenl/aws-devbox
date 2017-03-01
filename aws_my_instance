@@ -1,0 +1,13 @@
+AWS_INSTANCE_ID=
+AWS_INSTANCE_NAME=DevBox
+AWS_INSTANCE_HOSTNAME=
+AWS_AMI_ID=
+AWS_AMI_DATE=2000-01-01
+AWS_S3_HOME=
+
+alias myaws="ssh $AWS_INSTANCE_HOSTNAME"
+alias aws-init="source ~/.aws_my_instance"
+alias aws-kill="aws --profile personal ec2 terminate-instances --instance-ids ${AWS_INSTANCE_ID}"
+alias aws-killall="aws --profile personal ec2 terminate-instances --instance-ids $(aws --profile personal --output text ec2 describe-instances --filter "Name=tag:Name,Values=${AWS_INSTANCE_NAME}" "Name=instance-state-name,Values=pending,running" --query "Reservations[].Instances[].InstanceId[]")"
+alias aws-start="~/git/aws-boot/boot-instance.sh"
+
