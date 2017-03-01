@@ -149,12 +149,14 @@ set_status () {
   _set_status_hostname=$2
   _set_status_ami=$aws_ami_id
   _set_status_date=$aws_ami_date
+  _set_status_name=$instance_name
   echo "Setting Params in Stat File"
   echo "[INFO] AWS_HOSTNAME: ${_set_status_hostname}"
   sed -i "s/AWS_INSTANCE_ID=.*/AWS_INSTANCE_ID=${_set_status_id}/" $HOME/.aws_my_instance 
   sed -i "s/AWS_INSTANCE_HOSTNAME=.*/AWS_INSTANCE_HOSTNAME=${_set_status_hostname}/" $HOME/.aws_my_instance
   sed -i "s/AWS_AMI_ID=.*/AWS_AMI_ID=${_set_status_ami}/" $HOME/.aws_my_instance
   sed -i "s/AWS_AMI_DATE.*/AWS_AMI_DATE=${_set_status_date}/" $HOME/.aws_my_instance
+  sed -i "s/AWS_INSTANCE_NAME=.*/AWS_INSTANCE_NAME=${_set_status_name}/" $HOME/.aws_my_instance
 }
 
 check_for_existing
