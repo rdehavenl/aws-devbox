@@ -1,7 +1,7 @@
 # My AWS Boot Scrtipts
 
 # Description
-This script is used to boot up an Amazon Linux 'devbox' in the `default-vpc`
+This script is used to boot up an Amazon Linux 'devbox' in the `default-vpc`.
 
 # Usage
 ## Setup
@@ -15,7 +15,7 @@ This script is used to boot up an Amazon Linux 'devbox' in the `default-vpc`
 ## Notes
 
   * Script currently assumes to find some vars from `$HOME/.aws_my_instance`
-  * Script currently assumes you want to use an aws credential profile 'personal'
-    * Source: (Configuring AWS Command Line Interface)|[http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-multiple-profiles]
+  * Script currently assumes you want to use an aws credential profile `personal`
+    * Source: [Configuring AWS Command Line Interface|http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-multiple-profiles]
   * Script will fetch latest AMZLNX Ami to use, and will re-check every 30-days
   * Not tested on Mac yet, TODO
